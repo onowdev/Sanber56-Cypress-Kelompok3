@@ -1,13 +1,20 @@
 describe('template spec', () => {
-  it.only('Success', () => {
+  beforeEach(() => {
     cy.visit('https://magento.softwaretestingboard.com/customer/account/create/')
-    cy.get('#firstname').type('Sanber')
-    cy.get('#lastname').type('Kelompok3')
-    cy.get('#email_address').type('kel3@gmail.com')
-    cy.get('#password').type('Kel3_sanber')
-    cy.get('#password-confirmation').type('Kel3_sanber')
-    cy.get('#form-validate > .actions-toolbar > div.primary > .action > span').click()
+  })
+
+  it('fail-different Pass', () => {
+    cy.regis('Sanber','Kelompok3','kel3@gmail.com','Kel3_sanber','Kel3_sanbe')
+    cy.get('#password-confirmation-error').should('contain.text','Please enter the same value again')
+  })
+
+  it.only('Success', () => {
+    cy.regis('Sanber','Kelompok3','kel3@gmail.com','Kel3_sanber','Kel3_sanber')
     cy.url()
     //should('include','MyAccount')
   })
+
+  
+  
+
 })
