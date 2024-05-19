@@ -13,6 +13,14 @@ let emailname = randomEmail()
     cy.visit('https://magento.softwaretestingboard.com/customer/account/create/')
   })
 
+  it.only('fail-using fixtures', () => {
+    cy.fixture('createAccount.json').then((create) => {
+      //const datacreate = create;
+      cy.regis(create.firstname,create.lastname,create.emailname,create.pass,create.confirpass)
+    })
+    
+  })
+
   it('fail-using POM', () => {
     cy.get(createAccPage.fn).type('Sanber')
     cy.get(createAccPage.ln).type('Kelompok3')
@@ -23,7 +31,7 @@ let emailname = randomEmail()
     cy.get('#password-confirmation-error').should('contain.text','Please enter the same value again')
   })
 
-  it.only('fail-using POM type 2', () => {
+  it('fail-using POM type 2', () => {
     createAccPage.inputfn('Sanber')
     createAccPage.inputln('Kelompok3')
     createAccPage.inputemail('kel3@gmail.com')

@@ -1,3 +1,7 @@
 {
-    "_comment" : "Sepertinya Create Account tidak membutuhkan fixtures"
+    "firstname" : "Sanber",
+    "lastname":  "Kelompok3",
+    "emailname" : "kel3@gmail.com",
+    "pass" : "Kel3_sanber",
+    "confirpass" : "Kel3_sanbe"
 }
