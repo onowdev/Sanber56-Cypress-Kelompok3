@@ -13,15 +13,14 @@ let emailname = randomEmail()
     cy.visit('https://magento.softwaretestingboard.com/customer/account/create/')
   })
 
-  it.only('fail-using fixtures', () => {
+  it('failed-using fixtures', () => {
     cy.fixture('createAccount.json').then((create) => {
       //const datacreate = create;
       cy.regis(create.firstname,create.lastname,create.emailname,create.pass,create.confirpass)
     })
-    
   })
 
-  it('fail-using POM', () => {
+  it('failed-using POM', () => {
     cy.get(createAccPage.fn).type('Sanber')
     cy.get(createAccPage.ln).type('Kelompok3')
     cy.get(createAccPage.email).type('kel3@gmail.com')
@@ -31,7 +30,7 @@ let emailname = randomEmail()
     cy.get('#password-confirmation-error').should('contain.text','Please enter the same value again')
   })
 
-  it('fail-using POM type 2', () => {
+  it('failed-using POM type 2', () => {
     createAccPage.inputfn('Sanber')
     createAccPage.inputln('Kelompok3')
     createAccPage.inputemail('kel3@gmail.com')
@@ -41,9 +40,19 @@ let emailname = randomEmail()
     cy.get('#password-confirmation-error').should('contain.text','Please enter the same value again')
   })
 
-  it('fail-different Pass', () => {
+  it('failed-different Pass', () => {
     cy.regis('Sanber','Kelompok3','kel3@gmail.com','Kel3_sanber','Kel3_sanbe')
     cy.get('#password-confirmation-error').should('contain.text','Please enter the same value again')
+  })
+
+  it('failed-wrong email', () => {
+    cy.regis('Sanber','Kelompok3','kel3','Kel3_sanber','Kel3_sanber')
+    cy.get('#email_address-error').should('contain.text','Please enter a valid email address (Ex: johndoe@domain.com).')
+  })
+
+  it.only('failed-can contain symbols', () => {
+    cy.regis('@','*','kel3@gmail.com','Kel3_sanber','Kel3_sanber')
+    cy.url()
   })
 
   it('Success', () => {
