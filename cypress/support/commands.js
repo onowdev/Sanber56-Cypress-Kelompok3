@@ -12,14 +12,16 @@
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
-Cypress.Commands.add('regis', (firstname,lastname,email,pass,confirpass ) => { 
+Cypress.Commands.add('regis', (firstname,lastname,emailname,pass,confirpass ) => { 
     cy.get('#firstname').type(firstname)
     cy.get('#lastname').type(lastname)
-    cy.get('#email_address').type(email)
+    cy.get('#email_address').type(emailname)
     cy.get('#password').type(pass)
     cy.get('#password-confirmation').type(confirpass)
     cy.get('#form-validate > .actions-toolbar > div.primary > .action > span').click()
  })
+
+ 
 
 //
 // -- This is a child command --
