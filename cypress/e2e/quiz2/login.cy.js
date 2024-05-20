@@ -17,7 +17,7 @@ describe('template spec', () => {
   });
 
   it("Login Failed - Wrong Credentials", () => {
-    cy.login("ifransisca14@gmail.com", "passwordsalah")
+    cy.login("ifransisca14@gmail.com", "inipasswordsalah")
     cy.get("#send2").click({ timeout: 6000 })
     cy.get(".message-error").should("be.visible")
   });
