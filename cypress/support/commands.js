@@ -21,7 +21,11 @@ Cypress.Commands.add('regis', (firstname,lastname,emailname,pass,confirpass ) =>
     cy.get('#form-validate > .actions-toolbar > div.primary > .action > span').click()
  })
 
- 
+Cypress.Commands.add('login', (email, pass) => {
+     cy.get("#email").type(email)
+     cy.get("#pass").type(pass)
+ })
+
 
 //
 // -- This is a child command --
