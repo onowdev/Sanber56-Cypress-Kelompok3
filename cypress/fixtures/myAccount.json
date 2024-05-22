@@ -1,0 +1,21 @@
+{
+    "email": "kel3@gmail.com",
+    "password": "Kel3_sanber",
+    "currentPassword": "Kel3_sanber",
+    "firstName": "Sanber",
+    "lastName": "Kelompok3",
+    "newFirstName": "SanberNew",
+    "newLastName": "Kelompok3New",
+    "newEmail": "newkel3@gmail.com",
+    "newPassword": "Newpassword123",
+    "street1": "123 Test St",
+    "street2": "Apt 4B",
+    "street3": "",
+    "city": "Testville",
+    "state": "California",
+    "postcode": "12345",
+    "country": "United States",
+    "phone": "1234567890",
+    "company": "Sanber Company"
+  }
+  
