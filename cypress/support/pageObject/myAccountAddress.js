@@ -1,8 +1,6 @@
-// cypress/support/pageObject/AddressPage.js
-
 class AddressPage {
     visit() {
-        cy.visit('/customer/address'); // Pastikan URL ini benar
+        cy.visit('/customer/address'); 
     }
 
     addNewAddress(firstName, lastName, company, phone, street1, street2, street3, city, state, postcode, country) {
@@ -21,7 +19,7 @@ class AddressPage {
     }
 
     editAddress(firstName, lastName, company, phone, street1, street2, street3, city, state, postcode, country) {
-        //cy.get('a[title="Edit Address"]').click(); // Pastikan selektor ini benar
+        //cy.get('a[title="Edit Address"]').click(); 
         cy.get('#firstname').clear().type(firstName);
         cy.get('#lastname').clear().type(lastName);
         cy.get('#company').clear().type(company);
