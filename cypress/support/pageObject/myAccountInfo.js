@@ -1,5 +1,3 @@
-// cypress/page_objects/AccountInfoPage.js
-
 class AccountInfoPage {
     visit() {
         cy.navigateToAccountInfo();
