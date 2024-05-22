@@ -64,7 +64,7 @@ describe('My Account Tests', () => {
 
     it('should edit default billing address with valid data', () => {
         cy.fixture('myAccount').then((myAccount) => {
-            cy.navigateToAccountInfo('Edit Default Billing Address'); // Pilih 'Edit Default Billing Address'
+            cy.navigateToAccountInfo('Edit Default Billing Address'); 
             addressPage.editAddress(
                 myAccount.firstName, myAccount.lastName, myAccount.company, myAccount.phone, myAccount.street1, myAccount.street2,
                 myAccount.city, myAccount.state, myAccount.postcode, myAccount.country
@@ -75,7 +75,7 @@ describe('My Account Tests', () => {
 
     it('should edit default shipping address with valid data', () => {
         cy.fixture('myAccount').then((myAccount) => {
-            cy.navigateToAccountInfo('Edit Default Shipping Address'); // Pilih 'Edit Default Shipping Address'
+            cy.navigateToAccountInfo('Edit Default Shipping Address'); 
             addressPage.editAddress(
                 myAccount.firstName, myAccount.lastName, myAccount.company, myAccount.phone, myAccount.street1, myAccount.street2,
                 myAccount.city, myAccount.state, myAccount.postcode, myAccount.country
